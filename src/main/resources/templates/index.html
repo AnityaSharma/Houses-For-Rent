@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 300px;
+            height: 330px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            margin-top: 35px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submitButton{
+            margin-top: 28px;
+            width: 170px;
+        }
+        .loginLink{
+            margin-top: 35px;
+        }
+        .loginLink a{
+            color: #4caf50;
+            font-size: large;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<form class="login-container" action="#" th:action="@{/authenticateTheUser}" method="post">
+    <h2>Login</h2>
+
+    <div  th:if="${param.error}">
+        <i>invalid username/password</i>
+    </div>
+
+    <div class="form-group">
+        <input type="text" id="email" placeholder="Enter your email" name="username">
+    </div>
+<!--    <h1>Yoooo</h1>-->
+    <div class="form-group">
+        <input type="password" id="password" placeholder="Enter your password" name="password">
+    </div>
+
+    <div>
+        <button class="submitButton" onclick="submitForm()">Submit</button>
+    </div>
+    <div class="loginLink">
+        <a href="">Signup</a>
+    </div>
+
+</form>
+
+</body>
+</html>
