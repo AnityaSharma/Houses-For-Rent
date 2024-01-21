@@ -5,10 +5,10 @@ import dev.housesforsale.houses.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/user")
 public class UserRestController {
 
     @Autowired
@@ -23,8 +23,5 @@ public class UserRestController {
         return ResponseEntity.ok(body);
     }
 
-    @GetMapping(value="/test")
-    public String test(){
-        return "hello world";
-    }
+
 }
